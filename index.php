@@ -20,15 +20,18 @@ require_once(__DIR__ . '/functions.php');
     <div class="container">
         <!-- inclusion de l'entête du site -->
         <?php require_once(__DIR__ . '/header.php'); ?>
-        <h1>Liste des recettes</h1>
 
-        <?php foreach (getRecipes($recipes) as $recipe) : ?>
-            <article>
-                <h3><?php echo $recipe['title']; ?></h3>
-                <div><?php echo $recipe['recipe']; ?></div>
-                <i><?php echo displayAuthor($recipe['author'], $users); ?></i>
-            </article>
-        <?php endforeach ?>
+        <?php require_once(__DIR__ . '/login.php'); ?>
+        <?php if (isset($loggedUser)) : ?>
+            <h1>Liste des recettes</h1>
+            <?php foreach (getRecipes($recipes) as $recipe) : ?>
+                <article>
+                    <h3><?php echo $recipe['title']; ?></h3>
+                    <div><?php echo $recipe['recipe']; ?></div>
+                    <i><?php echo displayAuthor($recipe['author'], $users); ?></i>
+                </article>
+            <?php endforeach ?>
+        <?php endif ?>
     </div>
 
     <!-- inclusion du bas de page du site -->
