@@ -15,3 +15,5 @@ Réalisation d'un site web dynamique de partage de recettes de cuisine incluant:
 
 -   La mise à jour, la suppression et l'ajout de recettes
 -   Un système de connexion utilisateur afin de gérer l'administration des recettes
+-   Un espace Contact avec ajout de fichier
+-   Un système de notation avec commentaires
